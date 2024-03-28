@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr. Penes production</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- Поисковая строка -->
+    <input class="form-control mr-sm-2 w-100" type="search" placeholder="Поиск" aria-label="Поиск"
+           id="search_videos">
+    <style>
+        .col {
+            padding-left: 2px !important;
+            padding-right: 2px !important;
+        }
+    </style>
+    <div id="pexels">
+        <div class="pexels-controls">
+            <a id="pexel-prev" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+            <a id="pexel-next" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+    <div id="pixabay">
+        <div class="pixabay-controls">
+            <a id="pixabay-prev" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+            <a id="pixabay-next" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+    <div id="mixkit">
+        <div class="mixkit-controls">
+            <a id="mixkit-prev" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+            <a id="mixkit-next" data-url="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Видеопроигрыватель</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Здесь будет динамически добавлено видео -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.hover-play').forEach(function (video) {
+        video.addEventListener('mouseover', function () {
+            this.play();
+        });
+
+        video.addEventListener('mouseout', function () {
+            this.pause();
+        });
+    });
+    $('body').on('click', 'video', function () {
+        var videoSrc = this.children[0].src; // Получение ссылки на видео
+        var modalBody = document.querySelector('#videoModal .modal-body');
+        modalBody.innerHTML = `<video width="100%" controls autoplay><source src="${videoSrc}" type="video/mp4">Ваш браузер не поддерживает видео.</video>`; // Добавление видео в модальное окно
+
+        $('#videoModal').modal('show'); // Открытие модального окна с использованием jQuery (Bootstrap)
+    });
+
+    $('#videoModal').on('hide.bs.modal', function (e) {
+        var modalBody = document.querySelector('#videoModal .modal-body');
+        modalBody.innerHTML = ''; // Очистка содержимого модального окна
+    });
+    $('#search_videos').on("keyup", function (e) {
+        if (e.keyCode == 13) {
+            console.log(e.target.value);
+            e.preventDefault();
+            $.ajax({
+                url: '/find_pexels',
+                method: 'post',
+                dataType: 'json',
+                data: {text: e.target.value, page: 1},
+                success: function (data) {
+                    console.log(data)
+                    $('#pexels').find('.content').empty()
+                    $('#pexels').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#pexel-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#pexel-next').data('url', data.next_page)
+                    }
+                }
+            });
+            $.ajax({
+                url: '/find_pixabay',
+                method: 'post',
+                dataType: 'json',
+                data: {text: e.target.value, page: 1},
+                success: function (data) {
+                    console.log(data)
+                    $('#pixabay').find('.content').empty()
+                    $('#pixabay').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#pixabay-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#pixabay-next').data('url', data.next_page)
+                    }
+                }
+            });
+            $.ajax({
+                url: '/find_mixkit',
+                method: 'post',
+                dataType: 'json',
+                data: {text: e.target.value, page: 1},
+                success: function (data) {
+                    console.log(data)
+                    $('#mixkit').find('.content').empty()
+                    $('#mixkit').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#mixkit-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#mixkit-next').data('url', data.next_page)
+                    }
+                }
+            });
+        }
+    });
+
+    $('#pexel-next').on('click', function (e) {
+        if ($('#pexel-next').data('url') != undefined) {
+            $.ajax({
+                url: '/find_pexels',
+                method: 'post',
+                dataType: 'json',
+                data: {text: $('#search_videos').val(), page: $('#pexel-next').data('url')},
+                success: function (data) {
+                    console.log(data)
+                    $('#pexels').find('.content').empty()
+                    $('#pexels').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#pexel-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#pexel-next').data('url', data.next_page)
+                    }
+                }
+            });
+        }
+    })
+
+    $('#pixabay-next').on('click', function (e) {
+        if ($('#pixabay-next').data('url') != undefined) {
+            $.ajax({
+                url: '/find_pixabay',
+                method: 'post',
+                dataType: 'json',
+                data: {text: $('#search_videos').val(), page: $('#pixabay-next').data('url')},
+                success: function (data) {
+                    $('#pixabay').find('.content').empty()
+                    $('#pixabay').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#pixabay-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#pixabay-next').data('url', data.next_page)
+                    }
+                }
+            });
+        }
+    })
+
+    $('#mixkit-next').on('click', function (e) {
+        if ($('#mixkit-next').data('url') != undefined) {
+            $.ajax({
+                url: '/find_mixkit',
+                method: 'post',
+                dataType: 'json',
+                data: {text: $('#search_videos').val(), page: $('#mixkit-next').data('url')},
+                success: function (data) {
+                    $('#mixkit').find('.content').empty()
+                    $('#mixkit').find('.content').html(data.table)
+
+                    if (data.prev_page != false) {
+                        $('#mixkit-prev').data('url', data.prev_page)
+                    }
+                    if (data.next_page != false) {
+                        $('#mixkit-next').data('url', data.next_page)
+                    }
+                }
+            });
+        }
+    })
+
+
+</script>
+
+<!-- Подключение Bootstrap JS и зависимостей -->
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% for chunk in videos_splitted %}
+    <div class="row">
+    {% for video in chunk %}
+            <div class="col">
+            <video class="hover-play" width="100%" onmouseover="this.play()" onmouseout="this.pause();" >
+                <source src="{{ video }}" type="video/mp4">
+            </video>
+        </div>
+    {% endfor %}
+    </div>
+{% endfor %}
